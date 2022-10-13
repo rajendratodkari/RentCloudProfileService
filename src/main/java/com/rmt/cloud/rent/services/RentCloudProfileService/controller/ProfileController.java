@@ -2,6 +2,7 @@ package com.rmt.cloud.rent.services.RentCloudProfileService.controller;
 
 import com.rmt.cloud.rent.commons.model.Customer;
 import com.rmt.cloud.rent.services.RentCloudProfileService.service.ProfileServiceImpl;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,5 +31,10 @@ public class ProfileController {
     } else {
       return ResponseEntity.ok(customer);
     }
+  }
+
+  @RequestMapping(value = "/profiles", method = RequestMethod.GET)
+  public List<Customer> fetchAll() {
+    return profileService.fetchAll();
   }
 }
