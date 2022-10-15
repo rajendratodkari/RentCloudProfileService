@@ -19,7 +19,7 @@ public class ProfileController {
   @Autowired ProfileServiceImpl profileService;
 
   @RequestMapping(value = "/profile", method = RequestMethod.POST)
-  public Customer saveCustomer(@RequestBody Customer customer) {
+  public Customer save(@RequestBody Customer customer) {
     return profileService.save(customer);
   }
 
